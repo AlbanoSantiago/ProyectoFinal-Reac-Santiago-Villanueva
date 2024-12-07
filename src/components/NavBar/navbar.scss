@@ -1,0 +1,39 @@
+.navbar{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: rgba(251, 234, 1, 0.888);
+
+    .brand{
+        display: flex;
+        align-items: center;
+    
+        img{
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+    }
+    .brand-name {
+        font-size: 3rem;
+        font-weight: bold;
+        color: green;
+    }
+        
+       
+    .categories{
+        display:contents;
+        padding: 0 10px;
+        font-weight: bold;
+        color: green        
+    }
+
+    .cartwidget{
+       display: flex; 
+       align-items: center;
+       gap: 0.5rem;      
+    }
+
+}
