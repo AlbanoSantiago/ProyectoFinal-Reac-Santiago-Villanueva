@@ -1,5 +1,5 @@
-import CartWidget from "./cartWidget"
-import tigerLogo from "../../assets/tigerlogo.png"
+import CartWidget from "./CartWidget"
+import tigerLogo from "../assets/tigerlogo.png"
 import "./navbar.scss"
 
 const NavBar = () => {
