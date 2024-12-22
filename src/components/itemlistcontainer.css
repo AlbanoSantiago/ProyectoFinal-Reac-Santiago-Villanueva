@@ -1,0 +1,15 @@
+.item-list-container{
+    padding: 20px 20px;
+}
+.itemlist{
+    display: flex;
+}
+.item{
+    padding: 15px 3px;
+    margin:  20px 5px;
+    background-color: rgb(57, 254, 2);
+    text-align: center;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.1);
+}

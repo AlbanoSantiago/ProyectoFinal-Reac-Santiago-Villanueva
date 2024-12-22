@@ -13,8 +13,8 @@ const NavBar = () => {
         </div>
 
         <ul className="categories">
-            <li>Playeras</li>
-            <li>Short Combate</li>
+            <li>Vestuario Calle</li>
+            <li>Vestuario Entrenamiento</li>
             <li>Equipo de Protección</li>
         </ul>
         <CartWidget />
