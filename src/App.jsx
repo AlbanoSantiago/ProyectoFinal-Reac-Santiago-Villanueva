@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import './App.css'
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
     <div>
       <NavBar />
       <ItemListContainer saludo={"Bienvenido a la Tienda Oficial en México"}/>
+
+        <ItemDetailContainer />
+
     </div>
     
   )

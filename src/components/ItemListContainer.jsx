@@ -5,7 +5,7 @@ import "./itemlistcontainer.css"
 
 
 
-const ItemListContainer = ({ saludo}) => {
+const ItemListContainer = ({ saludo }) => {
   const [products, setProducts] = useState ([])
 
   
@@ -61,7 +61,7 @@ const ItemListContainer = ({ saludo}) => {
   */
     
   return (
-    <div className="item-list-container">
+    <div className="itemlistcontainer">
         <h1>{ saludo }</h1>
         <ItemList products={products}/>
     </div>
