@@ -1,11 +1,11 @@
 .itemlistcontainer {
-  padding: 20px;
+  padding: px;
 }
 
 .itemlist {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-  gap: 20px; /* Espacio uniforme entre los elementos */
+  gap: 40px; /* Espacio uniforme entre los elementos */
   padding: 50px; /* Espaciado interno para el contenedor */
 }
 
@@ -19,8 +19,8 @@
   background-color: rgb(4, 253, 4); /* Color de fondo */
   text-align: center;
   border-radius: 20px; /* Bordes redondeados */
-  width: 100%; /* Asegura que el elemento ocupe todo el ancho disponible */
-  box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.1); /* Sombra para diseño */
+  width: 70%; /* Asegura que el elemento ocupe todo el ancho disponible */
+  box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.439); /* Sombra para diseño */
 }
 
 .item img {
@@ -28,12 +28,12 @@
   height: auto; /* Mantiene la proporción */
   border-radius: 10px; /* Bordes redondeados */
   object-fit: cover; /* Ajusta la imagen dentro del contenedor */
-  margin-bottom: 20px; /* Espaciado inferior entre imagen y texto */
+  margin-bottom: 10px; /* Espaciado inferior entre imagen y texto */
 }
 
 .item p {
   font-size: 16px; /* Ajusta el tamaño del texto */
   color: #080808; /* Color del texto */
-  line-height: 0.5; /* para dar el espaciado entre líneas
+  line-height: 1; /* para dar el espaciado entre líneas
   margin: 5px 0 0; /* Espaciado superior e inferior */
 }

@@ -13,22 +13,25 @@ const hoctFilterProducts = (Component) => {
         }
 
         const search = () => {
-            const filterProducts = products.filter((product) => {
-                return product.name.toLowerCase().includes(query)
-            })
-
-            return filterProducts 
-        }
-        return(
+            return products.filter((product) =>
+              product.name.toLowerCase().includes(query)
+            );
+          };
+      
+          return (
             <>
-            <div>
-                <input type="text" placeholder="buscar..." onChange={changeInput} />
-            </div>
-                <Component {...props} products={ search() } />
+              <div>
+                <input 
+                  type="text" 
+                  placeholder="Buscar..." 
+                  onChange={changeInput} 
+                  style={{ padding: "10px", marginBottom: "20px" }}
+                />
+              </div>
+              <Component {...props} products={search()} loading={loading} />
             </>
-        )
-    }
-    
-}
+          );
+        };
+      };
 
 export default hoctFilterProducts

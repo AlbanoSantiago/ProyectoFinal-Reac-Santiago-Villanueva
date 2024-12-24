@@ -13,8 +13,10 @@ const ItemDetail = ({ product }) => {
 
       <div className="text-detail-container">
           <h2 className="title-detail">{product.name}</h2>
-          <p className="tex-detail">{product.description} </p>
+          <p className="text-detail">{product.description} </p>
           <p className="text-detail">Precio: {product.price} </p>
+          <p className="text-detail">Stock: {product.stock} </p>
+          <p className="text-detail">Categoria: {product.category} </p>
       </div>
     </div>
   )

@@ -43,5 +43,6 @@
     font-style: italic;
     padding: 10px 0;
     font-size: 1.3rem;
-    color: rgb(218, 218, 218);
+    line-height: 0;
+    color: rgb(0, 0, 0);
   }
