@@ -1,15 +1,39 @@
-.itemlistcontainer{
-    padding: 20px 20px;
+.itemlistcontainer {
+  padding: 20px;
 }
-.itemlist{
-    display: flex;
+
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+  gap: 20px; /* Espacio uniforme entre los elementos */
+  padding: 50px; /* Espaciado interno para el contenedor */
 }
-.item{
-    padding: 15px 3px;
-    margin:  20px 5px;
-    background-color: rgb(57, 254, 2);
-    text-align: center;
-    border-radius: 20px;
-    width: 100%;
-    box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.1);
+
+.item {
+  display: flex; /* Flexbox para alinear los elementos */
+  flex-direction: column; /* Imagen arriba, texto abajo */
+  justify-content: space-between; /* Distribuir espacio verticalmente */
+  align-items: center; /* Centrar elementos horizontalmente */
+  padding: 15px;
+  margin: 0; /* Elimina márgenes externos innecesarios */
+  background-color: rgb(4, 253, 4); /* Color de fondo */
+  text-align: center;
+  border-radius: 20px; /* Bordes redondeados */
+  width: 100%; /* Asegura que el elemento ocupe todo el ancho disponible */
+  box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.1); /* Sombra para diseño */
+}
+
+.item img {
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  margin-bottom: 20px; /* Espaciado inferior entre imagen y texto */
+}
+
+.item p {
+  font-size: 16px; /* Ajusta el tamaño del texto */
+  color: #080808; /* Color del texto */
+  line-height: 0.5; /* para dar el espaciado entre líneas
+  margin: 5px 0 0; /* Espaciado superior e inferior */
 }

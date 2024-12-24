@@ -3,7 +3,7 @@ import useProducts from "../hooks/useProducts"
 
 const hoctFilterProducts = (Component) => {
 
-    return function () {
+    return function HOC(props) {
         const { products, loading } = useProducts()
         const [query, setQuery] = useState("")
 
@@ -24,7 +24,7 @@ const hoctFilterProducts = (Component) => {
             <div>
                 <input type="text" placeholder="buscar..." onChange={changeInput} />
             </div>
-                <Component products={ search() } />
+                <Component {...props} products={ search() } />
             </>
         )
     }
