@@ -13,7 +13,7 @@ function ItemDetailContainer() {
     getProducts()
       .then((data) => {
         const productFind = data.find(
-          (dataProduct) => dataProduct.id === (idProduct) // Convierte idProduct a número si es necesario
+          (dataProduct) => dataProduct.id === (idProduct) // dataProduct.id === parseInt(idProduct)...Convierte idProduct a número si es necesario
         )
         setProduct(productFind || null) // Si no se encuentra, establece como null
       })
