@@ -20,6 +20,7 @@
         font-size: 3rem;
         font-weight: bold;
         color: rgb(4, 253, 4);
+        text-decoration:underline ;
     }
         
        
@@ -27,7 +28,7 @@
         display:contents;
         padding: 0 10px;
         font-weight: bold;
-        color: green        
+        color: rgb(4, 253, 4);
     }
 
     .cartwidget{
@@ -35,5 +36,16 @@
        align-items: center;
        gap: 0.5rem;      
     }
+
+    .category{
+        color: rgb(4, 254, 4);
+        text-decoration: none;
+    }
+
+    .category-active{
+        color: rgb(0, 0, 0);
+        text-decoration: underline;
+    }
+        
 
 }

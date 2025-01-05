@@ -6,7 +6,7 @@ const products = [
   image: "/imgproducts/playera-roja.png",
   price: 250,
   stock: 5,
-  category: "Vestuario Calle"
+  category: "vestuariocalle"
 },
 {
   id:"pl002",
@@ -15,7 +15,7 @@ const products = [
   image: "/imgproducts/playera-negra.png",
   price: 250,
   stock: 5,
-  category: "Vestuario Calle"
+  category: "vestuariocalle"
 },
 {
   id:"pl003",
@@ -24,7 +24,7 @@ const products = [
   image: "/imgproducts/playera-blanca.png",
   price: 250,
   stock: 5,
-  category: "Vestuario Calle"
+  category: "vestuariocalle"
 },
 {
   id:"Co001",
@@ -33,7 +33,7 @@ const products = [
   image: "/imgproducts/rash-combate.png",
   price: 500,
   stock: 10,
-  category: "Vestuario Entrenamiento",
+  category: "vestuarioentrenamiento",
 },
 {
   id:"Co002",
@@ -42,7 +42,7 @@ const products = [
   image: "/imgproducts/conjunto-entrenamiento.png",
   price: 950,
   stock: 10,
-  category: "Vestuario Entrenamiento",
+  category: "vestuarioentrenamiento",
 },
 {
   id:"Co003",
@@ -51,7 +51,7 @@ const products = [
   image: "/imgproducts/butarga-entrenamiento.png",
   price: 950,
   stock: 10,
-  category: "Vestuario Entrenamiento",
+  category: "vestuarioentrenamiento",
 },
 {
   id:"Eq001",
@@ -60,7 +60,7 @@ description: "Espinillera de Entrenamiento",
 image: "/imgproducts/espinillera.png",
 price: 650,
 stock: 25,
-category: "Equipo de Protección",
+category: "equipoproteccion",
 },
 {
   id:"Eq002",
@@ -69,16 +69,16 @@ description: "Guantes MMA Entrenamiento/competencia",
 image: "/imgproducts/guante.png",
 price: 1200,
 stock: 25,
-category: "Equipo de Protección",
+category: "equipoproteccion",
 },
 {
   id:"Eq003",
 name: "Bucal",
 description: "Bucal protector Gel",
-image: "imgproducts/bucalgel.png",
+image: "/imgproducts/bucalgel.png",
 price: 250,
 stock: 20,
-category: "Equipo de Protección",
+category: "equipoproteccion",
 }
 ] 
 

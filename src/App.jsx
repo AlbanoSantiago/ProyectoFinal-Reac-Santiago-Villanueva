@@ -2,6 +2,7 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NotFoundPage from './components/NotFoundPage/NotFoundPage'
 import './App.css'
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<ItemListContainer saludo={"Bienvenido a la Tienda Oficial en México"} />} />
           <Route path="/category/:idCategory" element={<ItemListContainer saludo={"Productos por Categoría"} />} />
           <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
+
+         <Route path='*' element={<NotFoundPage />} />
         </Routes>
           
         
