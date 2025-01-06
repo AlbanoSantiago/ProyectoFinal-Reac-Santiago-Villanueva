@@ -3,6 +3,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFoundPage from './components/NotFoundPage/NotFoundPage'
+import EjemploContadorEventListener from './components/Ejemplos/EjemploContadorEventListener/EjemploContadorEventListener'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/detail/:idProduct" element={<ItemDetailContainer />} />
 
          <Route path='*' element={<NotFoundPage />} />
+         <Route path="/Ejemplos" element={<EjemploContadorEventListener />} />
         </Routes>
           
         
