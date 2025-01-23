@@ -36,6 +36,6 @@ function ItemDetailContainer() {
   return <ItemDetail product={product} />
 
 }
-
+ 
 export default ItemDetailContainer
 
