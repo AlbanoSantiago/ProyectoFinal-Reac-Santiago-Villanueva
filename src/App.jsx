@@ -4,6 +4,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFoundPage from './components/NotFoundPage/NotFoundPage'
 import EjemploContadorEventListener from './components/Ejemplos/EjemploContadorEventListener/EjemploContadorEventListener'
+import { CartProvider } from './context/CartContex'
 import './App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className='container-app'>
       <BrowserRouter>
+      <CartProvider>
         <NavBar />
         
         <Routes>
@@ -21,12 +23,9 @@ function App() {
          <Route path='*' element={<NotFoundPage />} />
          <Route path="/Ejemplos" element={<EjemploContadorEventListener />} />
         </Routes>
-          
-        
+        </CartProvider> 
       </BrowserRouter>
-
     </div>
-    
   )
 }
 
