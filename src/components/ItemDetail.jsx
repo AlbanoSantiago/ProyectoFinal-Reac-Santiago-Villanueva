@@ -1,17 +1,22 @@
+import { useContext } from "react"
+import { CartContext } from "../context/CartContex"
 import { useState } from "react"
-import "./itemdetail.css"
 import ItemCount from "./ItemCount/ItemCount"
+import "./itemdetail.css"
 
 const ItemDetail = ({ product }) => {
+const { addProduct } = useContext(CartContext)
+
   const [currentImage, setCurrentImage] = useState(product.image[0])
 
   const images = product.image.filter( (image) => image !== currentImage)
 
   const AddProductInCart = (count) => {
     //console.log(count)
-    //Producto que vamos a añadir al carritp
+    //Producto que vamos a añadir al carrito
     const productCart = { ...product, quantity: count }
-    console.log(productCart)
+    
+    addProduct(productCart)
   }
 
   return (

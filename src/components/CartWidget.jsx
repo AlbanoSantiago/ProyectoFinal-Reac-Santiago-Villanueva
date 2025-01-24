@@ -1,15 +1,16 @@
-import { FaCartArrowDown } from "react-icons/fa6";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContex";
+import { FaCartArrowDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { saludo, saludando } = useContext(CartContext)
-
+  const { totalQuantity } = useContext(CartContext)
+  
   return (
-    <div className="cartwidget" onClick={saludando}>
+    <Link to="/cart" className="cartwidget">
         <FaCartArrowDown size={30} />
-        <p>{saludo}</p>
-    </div>
+        <p> {totalQuantity() }</p>
+    </Link>
   )
 }
 
