@@ -1,0 +1,54 @@
+.itemlistcontainer {
+  padding: 20px;
+}
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-top: 20px;
+  animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+  gap: 40px; /* Espacio uniforme entre los elementos */
+  padding: 50px; /* Espaciado interno para el contenedor */
+}
+
+.item {
+  display: flex; /* Flexbox para alinear los elementos */
+  flex-direction: column; /* Imagen arriba, texto abajo */
+  justify-content: space-between; /* Distribuir espacio verticalmente */
+  align-items: center; /* Centrar elementos horizontalmente */
+  padding: 15px;
+  margin: 0; /* Elimina márgenes externos innecesarios */
+  background-color: rgb(4, 253, 4); /* Color de fondo */
+  text-align: center;
+  border-radius: 20px; /* Bordes redondeados */
+  width: 70%; /* Asegura que el elemento ocupe todo el ancho disponible */
+  box-shadow: 5px 10px 6px rgba(0, 0, 0, 0.439); /* Sombra para diseño */
+}
+
+.item img {
+  width: 100%; /* Imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  margin-bottom: 10px; /* Espaciado inferior entre imagen y texto */
+}
+
+.item p {
+  font-size: 16px; /* Ajusta el tamaño del texto */
+  color: #080808; /* Color del texto */
+  line-height: 1; /* para dar el espaciado entre líneas
+  margin: 5px 0 0; /* Espaciado superior e inferior */
+}
