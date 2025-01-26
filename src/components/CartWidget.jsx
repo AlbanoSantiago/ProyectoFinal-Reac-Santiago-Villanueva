@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext)
+
+  let quantity = totalQuantity()
   
   return (
     <Link to="/cart" className="cartwidget">
         <FaCartArrowDown size={30} />
-        <p> {totalQuantity() }</p>
+        <p> { quantity !== 0 && quantity }</p>
     </Link>
   )
 }

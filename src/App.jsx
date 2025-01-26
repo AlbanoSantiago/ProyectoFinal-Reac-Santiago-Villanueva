@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFoundPage from './components/NotFoundPage/NotFoundPage'
 import EjemploContadorEventListener from './components/Ejemplos/EjemploContadorEventListener/EjemploContadorEventListener'
 import { CartProvider } from './context/CartContex'
-import Cart from './components/cart/Cart'
+import Cart from './components/Cart/Cart'
 import './App.css'
 
 function App() {

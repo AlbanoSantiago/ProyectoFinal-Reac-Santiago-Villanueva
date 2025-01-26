@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
 
-      <button onClick={ () => navigate(-1) }>Ir para atras</button>
+      <button className="botton" onClick={ () => navigate(-1) }>Ir para atras</button>
 
         <Link to="/" className="brand">
             <img src={tigerLogo} alt=""/>

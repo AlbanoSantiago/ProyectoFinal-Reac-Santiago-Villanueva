@@ -173,4 +173,30 @@
     font-weight: bold;
     color: #888;
   }
+
+  .empty-cart {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .empty-cart-message {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .go-home-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .go-home-button:hover {
+    background-color: #45a049;
+  }
+  
   

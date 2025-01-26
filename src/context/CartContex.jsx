@@ -1,20 +1,30 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect} from "react";
 
 const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const cartLocalStorage = JSON.parse(localStorage.getItem("cart-ecommerce"))
+  const [cart, setCart] = useState( cartLocalStorage ? cartLocalStorage : [])
+
+  //Local Storage
+  useEffect(() => {
+        localStorage.setItem("cart-ecommerce", JSON.stringify(cart))
+  }, [cart])
+
+  
 
   const addProduct = (newProduct) => {
+    const index = cart.findIndex((productCart) => productCart.id === newProduct.id)
+
     if (!newProduct.image) {
       newProduct.image = "placeholder.png"; // Asigna una imagen por defecto si no se proporciona
     }
-  
-    const index = cart.findIndex((productCart) => productCart.id === newProduct.id);
-  
+    
     if (index === -1) {
+        //agregar el producto como nuevo
       setCart([...cart, newProduct]);
     } else {
+        //modificar solamente la cantidad del producto
       const newCart = [...cart];
       newCart[index].quantity = newCart[index].quantity + newProduct.quantity;
       setCart(newCart);

@@ -1,0 +1,32 @@
+.loader-container {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .return-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .return-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .detail-footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

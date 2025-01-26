@@ -4,7 +4,7 @@
 .loading {
   text-align: center;
   font-size: 1.5rem;
-  color: #007bff;
+  color: rgb(0, 123, 255);
   margin-top: 20px;
   animation: fade 1.5s infinite;
 }
