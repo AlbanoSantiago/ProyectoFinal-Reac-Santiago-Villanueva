@@ -1,30 +1,45 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { getProducts } from "../data/data.js";
 import { useParams, Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../db/db";
 import { RiseLoader } from "react-spinners";
-import "./ItemDetailContainer.css"; // Importar el archivo CSS
+import "./ItemDetailContainer.css";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState(null); // Estado inicial como null
   const [loading, setLoading] = useState(true); // Estado de carga
+  const [error, setError] = useState(null); // Estado para manejar errores
   const { idProduct } = useParams();
 
+  // Función para obtener el producto de Firestore
+  const getProduct = async () => {
+    try {
+      const docRef = doc(db, "products", idProduct);
+      const dataDb = await getDoc(docRef);
+
+      // Verificar si el documento existe
+      if (dataDb.exists()) {
+        const data = { id: dataDb.id, ...dataDb.data() };
+
+        // Asegurarse de que `data.image` sea un arreglo
+        const images = Array.isArray(data.image) ? data.image : data.image ? data.image.split(',') : [];
+        data.image = images; // Asignamos el arreglo de imágenes a la propiedad `image`
+
+        setProduct(data); // Guardar el producto
+      } else {
+        setError("Producto no encontrado"); // Manejo de error cuando el producto no existe
+      }
+    } catch (error) {
+      setError("Hubo un error al cargar el producto."); // Manejo de errores
+      console.log(error);
+    } finally {
+      setLoading(false); // Independientemente de si hay error o no, cambiamos el estado a false
+    }
+  };
+
   useEffect(() => {
-    setLoading(true); // Inicia el estado de carga
-    getProducts()
-      .then((data) => {
-        const productFind = data.find(
-          (dataProduct) => dataProduct.id === idProduct
-        );
-        setProduct(productFind || null); // Si no se encuentra, establece como null
-      })
-      .catch((error) => {
-        console.error("Error al cargar el producto:", error);
-      })
-      .finally(() => {
-        setLoading(false); // Finaliza el estado de carga
-      });
+    getProduct();
   }, [idProduct]);
 
   if (loading) {
@@ -35,10 +50,10 @@ function ItemDetailContainer() {
     );
   }
 
-  if (!product) {
+  if (error) {
     return (
       <div className="error-container">
-        <p>Producto no encontrado</p>
+        <p>{error}</p>
         <Link to="/" className="return-button">
           Regresar a la Tienda
         </Link>

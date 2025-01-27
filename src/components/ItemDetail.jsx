@@ -5,39 +5,47 @@ import { Link } from "react-router-dom";
 import "./itemdetail.css";
 
 const ItemDetail = ({ product }) => {
-  // Estado para controlar si se muestra o no, el componente ItemCount
   const [showItemCount, setShowItemCount] = useState(true);
-
   const { addProduct } = useContext(CartContext);
 
-  // Estado para la imagen principal
-  const [currentImage, setCurrentImage] = useState(product.image[0]);
+  // Asegurarse de que product.image sea un arreglo
+  const images = Array.isArray(product.image) ? product.image : product.image ? product.image.split(',') : [];
 
-  // Filtrar las imágenes secundarias
-  const images = product.image.filter((image) => image !== currentImage);
+  // Estado para la imagen principal
+  const [currentImage, setCurrentImage] = useState(images[0] || "/ruta/a/imagen/predeterminada.jpg");
+
+  // Filtrar las imágenes secundarias (excluyendo la imagen actual)
+  const secondaryImages = images.filter((image) => image !== currentImage);
 
   // Función para agregar producto al carrito
   const addProductInCart = (count) => {
     const productCart = { ...product, quantity: count };
     addProduct(productCart);
-
-    // Cambiar el estado para dejar de mostrar ItemCount
     setShowItemCount(false);
   };
+
+  // Validación de la existencia de imágenes
+  if (!images.length) {
+    return <p>No hay imágenes disponibles para este producto.</p>;
+  }
 
   return (
     <div className="item-detail">
       <div className="images-detail-container">
-        {}
+        {/* Imagenes secundarias */}
         <div className="secondary-images">
-          {images.map((image) => (
-            <img
-              src={image}
-              key={image}
-              alt={`Imagen secundaria de ${product.name}`}
-              onClick={() => setCurrentImage(image)}
-            />
-          ))}
+          {secondaryImages.length > 0 ? (
+            secondaryImages.map((image, index) => (
+              <img
+                src={image}
+                key={index}
+                alt={`Imagen secundaria de ${product.name} - ${index + 1}`}
+                onClick={() => setCurrentImage(image)}
+              />
+            ))
+          ) : (
+            <p>No hay imágenes secundarias disponibles.</p>
+          )}
         </div>
 
         {/* Imagen principal */}
@@ -54,9 +62,7 @@ const ItemDetail = ({ product }) => {
         <p className="text-detail">{product.description}</p>
         <p className="text-detail">Categoría: {product.category}</p>
         <p className="text-detail">Stock: {product.stock}</p>
-        <p className="text-detail">
-          Precio: <span className="product-price">${product.price} MXN</span>
-        </p>
+        <p className="text-detail">Precio: <span className="product-price">${product.price} MXN</span></p>
 
         {/* Componente de ItemCount o enlace a carrito */}
         {showItemCount ? (
@@ -65,7 +71,9 @@ const ItemDetail = ({ product }) => {
             addProductInCart={addProductInCart}
           />
         ) : (
-          <Link to="/cart" className="finish-purchase">Terminar mi Compra</Link>
+          <Link to="/cart" className="finish-purchase">
+            Terminar mi Compra
+          </Link>
         )}
       </div>
     </div>
